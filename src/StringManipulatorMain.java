@@ -4,11 +4,12 @@ public class StringManipulatorMain {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		boolean playAgain = true;
+		StringManipulator strReturn = new StringManipulator();
 		while(playAgain)
 		{
 		System.out.println("Which method would you like to run?");
 		String methodChoice = in.nextLine();
-		while(!methodChoice.equals("noVowels") && methodChoice.equals("reverse"))
+		while(!methodChoice.equals("noVowels") || !methodChoice.equals("reverse"))
 		{
 			System.out.println("Please input \"noVowels\"  or \"reverse\"");
 			methodChoice = in.nextLine();
@@ -17,14 +18,14 @@ public class StringManipulatorMain {
 		{
 		System.out.println("Please input a string");
 		String str = in.nextLine();
-		String returnString = str.noVowels();
+		String returnString = strReturn.noVowels(str);
 		System.out.println(returnString);
 		}
 		else if(methodChoice.equals("reverse"))
 		{
 			System.out.println("Please input a string");
 			String str = in.nextLine();
-			String returnString = str.reverse();
+			String returnString = strReturn.reverse(str);
 			System.out.println(returnString);
 		}
 		else
